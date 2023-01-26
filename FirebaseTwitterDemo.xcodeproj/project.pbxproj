@@ -20,6 +20,7 @@
 		C906F4BE297ADABE00D92EA6 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C906F4BD297ADABE00D92EA6 /* AuthView.swift */; };
 		C906F4C0297ADAC800D92EA6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C906F4BF297ADAC800D92EA6 /* MainView.swift */; };
 		C906F4C3297ADAF600D92EA6 /* FirebaseService in Frameworks */ = {isa = PBXBuildFile; productRef = C906F4C2297ADAF600D92EA6 /* FirebaseService */; };
+		C95A211A2982C3C000FAEFBF /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A21192982C3C000FAEFBF /* Profile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		C906F4BB297AD59D00D92EA6 /* NormalAuthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalAuthState.swift; sourceTree = "<group>"; };
 		C906F4BD297ADABE00D92EA6 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		C906F4BF297ADAC800D92EA6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		C95A21192982C3C000FAEFBF /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			children = (
 				C906F498297AD1BC00D92EA6 /* FirebaseTwitterDemoApp.swift */,
 				C906F49A297AD1BC00D92EA6 /* ContentView.swift */,
+				C95A21182982C3B000FAEFBF /* Models */,
 				C906F4B6297AD48E00D92EA6 /* Boosted */,
 				C906F4B5297AD48600D92EA6 /* Normal */,
 				C906F49C297AD1BD00D92EA6 /* Assets.xcassets */,
@@ -107,6 +110,14 @@
 				C906F4BF297ADAC800D92EA6 /* MainView.swift */,
 			);
 			path = Boosted;
+			sourceTree = "<group>";
+		};
+		C95A21182982C3B000FAEFBF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C95A21192982C3C000FAEFBF /* Profile.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C906F4B8297AD4AA00D92EA6 /* NormalAuthView.swift in Sources */,
+				C95A211A2982C3C000FAEFBF /* Profile.swift in Sources */,
 				C906F4C0297ADAC800D92EA6 /* MainView.swift in Sources */,
 				C906F4B4297AD42200D92EA6 /* ContainerView.swift in Sources */,
 				C906F4BA297AD4B800D92EA6 /* NormalMainView.swift in Sources */,

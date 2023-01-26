@@ -11,6 +11,7 @@ struct NormalAuthView: View {
     
     @EnvironmentObject private var authState: NormalAuthState
     
+    @State private var name = ""
     @State private var email = ""
     @State private var password = ""
     
@@ -19,6 +20,11 @@ struct NormalAuthView: View {
     var body: some View {
         VStack {
             Spacer()
+            
+            if isSignedUp != true {
+                TextField("Name", text: $name)
+                    .textFieldStyle(.roundedBorder)
+            }
             
             TextField("Email", text: $email)
                 .textInputAutocapitalization(.never)
@@ -61,7 +67,7 @@ struct NormalAuthView: View {
     func signUp() {
         Task {
             do {
-                try await authState.signUp(email: email, password: password)
+                try await authState.signUp(name: name, email: email, password: password)
             } catch {
                 print(error.localizedDescription)
             }

@@ -10,10 +10,11 @@ import FirebaseService
 
 struct MainView: View {
     
-    @FirebaseAuthenticator private var auth
+    @FirebaseAuthenticator<Profile> private var auth
     
     var body: some View {
         VStack {
+            Text("Hello, \(_auth.context.profile?.name ?? "")!")
             Button("Logout") {
                 logout()
             }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseService
 
 struct ContentView: View {
     
@@ -16,7 +17,9 @@ struct ContentView: View {
             if normal {
                 NormalContainerView()
             } else {
-                ContainerView()
+                FireabseAutheticatorView<ContainerView, Profile>("profiles") {
+                    ContainerView()
+                }
             }
         }
     }

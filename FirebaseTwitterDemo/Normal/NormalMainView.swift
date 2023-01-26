@@ -13,6 +13,7 @@ struct NormalMainView: View {
     
     var body: some View {
         VStack {
+            Text("Hello, \(authState.profile.name)!")
             Button("Logout") {
                 logout()
             }

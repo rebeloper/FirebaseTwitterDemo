@@ -10,19 +10,26 @@ import FirebaseService
 
 struct AuthView: View {
     
-    @FirebaseAuthenticator private var auth
+    @FirebaseAuthenticator<Profile> private var auth
     
     @State private var isSignedUp = true
+    
+    @State private var name = ""
     
     var body: some View {
         VStack {
             Spacer()
             
-            TextField("Email", text: _auth.$context.value.email)
+            if isSignedUp != true {
+                TextField("Name", text: $name)
+                    .textFieldStyle(.roundedBorder)
+            }
+            
+            TextField("Email", text: _auth.$context.credentials.email)
                 .textInputAutocapitalization(.never)
                 .textFieldStyle(.roundedBorder)
             
-            SecureField("Password", text: _auth.$context.value.password)
+            SecureField("Password", text: _auth.$context.credentials.password)
                 .textFieldStyle(.roundedBorder)
             
             Group {
@@ -59,7 +66,8 @@ struct AuthView: View {
     func signUp() {
         Task {
             do {
-                try await _auth.context.createUser()
+                let profile = Profile(uid: "", name: name)
+                try await _auth.context.signUp(profile: profile)
             } catch {
                 print(error.localizedDescription)
             }
